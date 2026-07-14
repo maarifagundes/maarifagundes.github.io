@@ -1,12 +1,13 @@
-return """
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mariana Fagundes</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -15,93 +16,136 @@ return """
 }
 
 body{
-    background:linear-gradient(135deg,#000000,#111827,#1e3a8a);
+    background:linear-gradient(-45deg,#000000,#1e3a8a,#ff4fa3,#000000);
+    background-size:400% 400%;
+    animation:gradient 12s ease infinite;
     color:white;
-    min-height:100vh;
 }
 
-.container{
-    max-width:1000px;
-    margin:50px auto;
-    padding:20px;
+@keyframes gradient{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
 }
 
 .card{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
+    width:900px;
+    max-width:95%;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
     border-radius:25px;
     padding:40px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.3);
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+    animation:entrada 1s ease;
 }
 
-.header{
+@keyframes entrada{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.foto{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ff4fa3,#4da6ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:60px;
+    margin:auto;
+}
+
+h1{
     text-align:center;
-    margin-bottom:40px;
-}
-
-.header h1{
+    margin-top:20px;
     font-size:3rem;
-    color:#ff69b4;
 }
 
-.header h2{
-    color:#60a5fa;
-    margin-top:10px;
-    font-weight:normal;
+.profissao{
+    text-align:center;
+    color:#dbeafe;
+    margin-bottom:30px;
 }
 
 .sobre{
+    text-align:center;
     line-height:1.8;
     font-size:1.1rem;
-    color:#e5e7eb;
 }
 
-.section{
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
     margin-top:35px;
 }
 
-.section h3{
-    color:#ff69b4;
-    margin-bottom:15px;
-    border-left:5px solid #60a5fa;
-    padding-left:10px;
-}
-
-.hobbies{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.tag{
-    background:#ff69b4;
-    color:white;
-    padding:10px 15px;
-    border-radius:30px;
-    font-size:0.95rem;
-}
-
-button{
-    margin-top:30px;
-    padding:15px 30px;
-    border:none;
-    border-radius:12px;
-    background:linear-gradient(135deg,#ff69b4,#60a5fa);
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
+.box{
+    background:rgba(255,255,255,.08);
+    padding:20px;
+    border-radius:15px;
     transition:.3s;
 }
 
-button:hover{
-    transform:scale(1.05);
+.box:hover{
+    transform:translateY(-8px);
+}
+
+.box h3{
+    margin-bottom:10px;
+    color:#7dd3fc;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:15px;
+}
+
+.tag{
+    padding:8px 12px;
+    border-radius:30px;
+    background:#ff4fa3;
+    font-size:14px;
+}
+
+.btn{
+    margin-top:35px;
+    text-align:center;
+}
+
+button{
+    border:none;
+    padding:15px 30px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#ff4fa3,#4da6ff);
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:1rem;
 }
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.75);
+    background:rgba(0,0,0,.8);
     justify-content:center;
     align-items:center;
 }
@@ -109,116 +153,118 @@ button:hover{
 .modal-content{
     background:white;
     color:#111827;
+    width:400px;
+    max-width:90%;
     padding:30px;
     border-radius:20px;
     text-align:center;
-    max-width:400px;
 }
 
 .modal-content h2{
-    color:#ff69b4;
+    color:#ff4fa3;
     margin-bottom:10px;
 }
 
-.modal-content button{
-    margin-top:15px;
-}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <div class="card">
+<section class="hero">
 
-        <div class="header">
-            <h1>🌸 Mariana Fagundes</h1>
-            <h2>Profissional de TI | HDI Seguros</h2>
-        </div>
+<div class="card">
 
-        <div class="sobre">
+    <div class="foto">👩‍💻</div>
+
+    <h1>Mariana Fagundes</h1>
+
+    <p class="profissao">
+        Analista • HDI Seguros • Formada em Tecnologia da Informação
+    </p>
+
+    <div class="sobre">
+        Olá! Eu sou a Mariana. Trabalho na HDI Seguros e sou apaixonada por tecnologia,
+        pessoas e novas experiências. Sou extremamente eclética, adoro descobrir
+        coisas novas e viver momentos inesquecíveis ao lado das pessoas que amo.
+    </div>
+
+    <div class="grid">
+
+        <div class="box">
+            <h3>💻 Carreira</h3>
             <p>
-                Olá! Seja muito bem-vindo(a) à minha página pessoal.
-                Meu nome é <strong>Mariana Fagundes</strong>, trabalho na
-                <strong>HDI Seguros</strong> e sou formada em
-                <strong>Tecnologia da Informação</strong>.
-            </p>
-
-            <br>
-
-            <p>
-                Sou uma pessoa extremamente eclética, curiosa e apaixonada
-                por novas experiências. Uma das coisas que mais gosto é
-                participar de <strong>festivais, shows e eventos musicais</strong>,
-                aproveitando diferentes estilos e culturas.
-            </p>
-
-            <br>
-
-            <p>
-                Compartilho minha vida com meu companheiro
-                <strong>Matheus</strong> e com meu pet
-                <strong>Apolo</strong>, que traz muita alegria e diversão
-                para os nossos dias.
+                Formada em TI e atuando no mercado de seguros,
+                combinando tecnologia, análise e inovação.
             </p>
         </div>
 
-        <div class="section">
-            <h3>✨ Meus Hobbies e Interesses</h3>
-
-            <div class="hobbies">
-                <span class="tag">🎵 Música</span>
-                <span class="tag">🎤 Shows</span>
-                <span class="tag">🎪 Festivais</span>
-                <span class="tag">💻 Tecnologia</span>
-                <span class="tag">🐶 Apolo</span>
-                <span class="tag">✈️ Viagens</span>
-                <span class="tag">🎬 Filmes e Séries</span>
-                <span class="tag">👨‍👩‍👧 Vida em Família</span>
-            </div>
+        <div class="box">
+            <h3>🎵 O que eu gosto</h3>
+            <p>
+                Sou apaixonada por música, festivais, shows,
+                viagens e novas experiências.
+            </p>
         </div>
 
-        <div class="section">
-            <h3>🎨 Cores Favoritas</h3>
+        <div class="box">
+            <h3>🏡 Minha Família</h3>
+            <p>
+                Moro com meu companheiro Matheus e com o
+                Apolo, meu pet e parceiro de aventuras.
+            </p>
+        </div>
 
-            <div class="hobbies">
-                <span class="tag" style="background:#ff69b4;">💗 Rosa</span>
-                <span class="tag" style="background:#000000;">🖤 Preto</span>
+        <div class="box">
+            <h3>🎨 Minhas Cores</h3>
+            <div class="tags">
+                <span class="tag">💗 Rosa</span>
+                <span class="tag" style="background:black;">🖤 Preto</span>
                 <span class="tag" style="background:#2563eb;">💙 Azul</span>
             </div>
         </div>
 
-        <center>
-            <button onclick="mostrarMensagem()">
-                Conheça um pouco mais
-            </button>
-        </center>
-
     </div>
+
+    <div class="btn">
+        <button onclick="abrirModal()">
+            Curiosidade sobre mim ✨
+        </button>
+    </div>
+
 </div>
+
+</section>
 
 <div class="modal" id="modal">
     <div class="modal-content">
-        <h2>😊 Obrigada pela visita!</h2>
+        <h2>✨ Curiosidade</h2>
         <p>
-            Sou apaixonada por tecnologia, música, novas experiências e pelos momentos especiais ao lado de quem amo.
+            Se tiver música tocando, tecnologia envolvida e pessoas especiais por perto,
+            provavelmente eu estou feliz!
         </p>
-        <button onclick="fecharMensagem()">
-            Fechar
-        </button>
+        <br>
+        <button onclick="fecharModal()">Fechar</button>
     </div>
 </div>
 
 <script>
-function mostrarMensagem(){
-    document.getElementById("modal").style.display = "flex";
+
+function abrirModal(){
+    document.getElementById('modal').style.display='flex';
 }
 
-function fecharMensagem(){
-    document.getElementById("modal").style.display = "none";
+function fecharModal(){
+    document.getElementById('modal').style.display='none';
 }
+
+window.onclick=function(e){
+    let modal=document.getElementById('modal');
+    if(e.target===modal){
+        modal.style.display='none';
+    }
+}
+
 </script>
 
 </body>
 </html>
-"""
