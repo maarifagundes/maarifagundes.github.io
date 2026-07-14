@@ -1,0 +1,224 @@
+return """
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mariana Fagundes</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#000000,#111827,#1e3a8a);
+    color:white;
+    min-height:100vh;
+}
+
+.container{
+    max-width:1000px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.3);
+}
+
+.header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.header h1{
+    font-size:3rem;
+    color:#ff69b4;
+}
+
+.header h2{
+    color:#60a5fa;
+    margin-top:10px;
+    font-weight:normal;
+}
+
+.sobre{
+    line-height:1.8;
+    font-size:1.1rem;
+    color:#e5e7eb;
+}
+
+.section{
+    margin-top:35px;
+}
+
+.section h3{
+    color:#ff69b4;
+    margin-bottom:15px;
+    border-left:5px solid #60a5fa;
+    padding-left:10px;
+}
+
+.hobbies{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.tag{
+    background:#ff69b4;
+    color:white;
+    padding:10px 15px;
+    border-radius:30px;
+    font-size:0.95rem;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 30px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#ff69b4,#60a5fa);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    background:white;
+    color:#111827;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    max-width:400px;
+}
+
+.modal-content h2{
+    color:#ff69b4;
+    margin-bottom:10px;
+}
+
+.modal-content button{
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <div class="header">
+            <h1>🌸 Mariana Fagundes</h1>
+            <h2>Profissional de TI | HDI Seguros</h2>
+        </div>
+
+        <div class="sobre">
+            <p>
+                Olá! Seja muito bem-vindo(a) à minha página pessoal.
+                Meu nome é <strong>Mariana Fagundes</strong>, trabalho na
+                <strong>HDI Seguros</strong> e sou formada em
+                <strong>Tecnologia da Informação</strong>.
+            </p>
+
+            <br>
+
+            <p>
+                Sou uma pessoa extremamente eclética, curiosa e apaixonada
+                por novas experiências. Uma das coisas que mais gosto é
+                participar de <strong>festivais, shows e eventos musicais</strong>,
+                aproveitando diferentes estilos e culturas.
+            </p>
+
+            <br>
+
+            <p>
+                Compartilho minha vida com meu companheiro
+                <strong>Matheus</strong> e com meu pet
+                <strong>Apolo</strong>, que traz muita alegria e diversão
+                para os nossos dias.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>✨ Meus Hobbies e Interesses</h3>
+
+            <div class="hobbies">
+                <span class="tag">🎵 Música</span>
+                <span class="tag">🎤 Shows</span>
+                <span class="tag">🎪 Festivais</span>
+                <span class="tag">💻 Tecnologia</span>
+                <span class="tag">🐶 Apolo</span>
+                <span class="tag">✈️ Viagens</span>
+                <span class="tag">🎬 Filmes e Séries</span>
+                <span class="tag">👨‍👩‍👧 Vida em Família</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🎨 Cores Favoritas</h3>
+
+            <div class="hobbies">
+                <span class="tag" style="background:#ff69b4;">💗 Rosa</span>
+                <span class="tag" style="background:#000000;">🖤 Preto</span>
+                <span class="tag" style="background:#2563eb;">💙 Azul</span>
+            </div>
+        </div>
+
+        <center>
+            <button onclick="mostrarMensagem()">
+                Conheça um pouco mais
+            </button>
+        </center>
+
+    </div>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2>😊 Obrigada pela visita!</h2>
+        <p>
+            Sou apaixonada por tecnologia, música, novas experiências e pelos momentos especiais ao lado de quem amo.
+        </p>
+        <button onclick="fecharMensagem()">
+            Fechar
+        </button>
+    </div>
+</div>
+
+<script>
+function mostrarMensagem(){
+    document.getElementById("modal").style.display = "flex";
+}
+
+function fecharMensagem(){
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+"""
